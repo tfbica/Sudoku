@@ -1,7 +1,8 @@
-from numpy import full
 from math import floor
-from sudoku_solver import SudokuSolver
 from random import choice
+
+from numpy import full
+from .sudoku_solver import SudokuSolver
 
 
 class SudokuCreator:

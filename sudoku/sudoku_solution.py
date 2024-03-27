@@ -1,5 +1,6 @@
 from math import floor, sqrt
 
+
 class SudokuSolution:
     def is_file_solution(self, file: str):
         pass

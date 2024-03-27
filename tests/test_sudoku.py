@@ -1,7 +1,12 @@
+import os
+import sys
 import unittest
 
+# Add the parent directory of your module to the Python path
+sys.path.insert(0, os.path.abspath(os.path.join(os.path.dirname(__file__), "..")))
 
-from sudoku_solution import SudokuSolution
+
+from sudoku import SudokuSolution
 
 
 class SudokuSolutionShould(unittest.TestCase):
