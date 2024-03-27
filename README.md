@@ -2,7 +2,9 @@
 
 [![Python Tests](https://github.com/tfbica/Sudoku/actions/workflows/python_tests.yml/badge.svg)](https://github.com/tfbica/Sudoku/actions/workflows/python_tests.yml)
 
-## sudoku_solution
+The library provides 3 classes.
+
+## SudokuSolution
 
 Checks if a Sudoku board is corretly filled.
 
@@ -18,7 +20,7 @@ solution = SudokuSolution()
 solution.is_solution_for(board, original_board)
 ```
 
-## sudoku_solver
+## SudokuSolver
 
 Solves a Sudoku board.
 
@@ -27,7 +29,7 @@ solver = SudokuSolver()
 solved_board = solver.solve(board)
 ```
 
-## sudoku_creator
+## SudokuCreator
 
 Creates a Sudoku board, given the root of the size and the number of empty places.
 
