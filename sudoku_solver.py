@@ -1,7 +1,5 @@
 import copy
 from math import floor, sqrt
-from numpy import array as nparr
-from sudoku_solution import SudokuSolution
 
 
 class SudokuSolver:
@@ -22,16 +20,16 @@ class SudokuSolver:
 
     def can_solve(self, board: list[list[int]], row: int, column: int, number: int):
         if number in board[row]:
-            print(f"FOR {row},{column} and {number} CANNOT row")
+            # print(f"FOR {row},{column} and {number} CANNOT row")
             return False
         if number in self.column_to_array(board, column):
-            print(f"FOR {row},{column} and {number} CANNOT column")
+            # print(f"FOR {row},{column} and {number} CANNOT column")
             return False
         zone_size = floor(sqrt(len(board)))
         zone_row = floor(row / zone_size) * zone_size
         zone_column = floor(column / zone_size) * zone_size
         if number in self.zone_to_array(board, zone_row, zone_column, zone_size):
-            print(f"FOR {row},{column} and {number} CANNOT zone")
+            # print(f"FOR {row},{column} and {number} CANNOT zone")
             return False
         return True
 
@@ -44,13 +42,13 @@ class SudokuSolver:
         return empties
 
     def solve_board(self, board: list[list[int]], empties: list[tuple[int, int]]):
-        print(empties)
-        print(nparr(board))
+        # print(empties)
+        # print(nparr(board))
         if len(empties) == 0:
             return board
         row, column = empties.pop(0)
         for number in range(1, len(board) + 1):
-            print(f"FOR {row},{column} TRY {number}")
+            # print(f"FOR {row},{column} TRY {number}")
             if self.can_solve(board, row, column, number):
                 next_board = copy.deepcopy(board)
                 next_board[row][column] = number
@@ -60,7 +58,4 @@ class SudokuSolver:
         return None
 
     def solve(self, board: list[list[int]]):
-        solution = self.solve_board(copy.deepcopy(board), self.find_empties(board))
-        if solution is not None and SudokuSolution().is_solution_for(board, solution):
-            return solution
-        return None
+        return self.solve_board(copy.deepcopy(board), self.find_empties(board))
