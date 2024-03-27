@@ -1,5 +1,7 @@
 # Sudoku game library
 
+![Python Tests](https://github.com/tfbica/Sudoku/workflows/python_tests/badge.svg)
+
 ## sudoku_solution
 
 Checks if a Sudoku board is corretly filled.
