@@ -18,7 +18,9 @@ class SudokuSolver:
                 array.append(board[x][y])
         return array
 
-    def can_solve(self, board: list[list[int]], row: int, column: int, number: int):
+    def can_solve(
+        self, board: list[list[int]], row: int, column: int, number: int
+    ):
         if number in board[row]:
             # print(f"FOR {row},{column} and {number} CANNOT row")
             return False
@@ -28,7 +30,9 @@ class SudokuSolver:
         zone_size = floor(sqrt(len(board)))
         zone_row = floor(row / zone_size) * zone_size
         zone_column = floor(column / zone_size) * zone_size
-        if number in self.zone_to_array(board, zone_row, zone_column, zone_size):
+        if number in self.zone_to_array(
+            board, zone_row, zone_column, zone_size
+        ):
             # print(f"FOR {row},{column} and {number} CANNOT zone")
             return False
         return True
@@ -41,7 +45,9 @@ class SudokuSolver:
                     empties.append((row, column))
         return empties
 
-    def solve_board(self, board: list[list[int]], empties: list[tuple[int, int]]):
+    def solve_board(
+        self, board: list[list[int]], empties: list[tuple[int, int]]
+    ):
         # print(empties)
         # print(nparr(board))
         if len(empties) == 0:
