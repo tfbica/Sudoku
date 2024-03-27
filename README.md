@@ -1,6 +1,6 @@
 # Sudoku game library
 
-![Python Tests](https://github.com/tfbica/Sudoku/workflows/python_tests/badge.svg)
+[![Python Tests](https://github.com/tfbica/Sudoku/actions/workflows/python_tests.yml/badge.svg)](https://github.com/tfbica/Sudoku/actions/workflows/python_tests.yml)
 
 ## sudoku_solution
 
