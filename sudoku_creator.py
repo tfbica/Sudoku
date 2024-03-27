@@ -1,4 +1,4 @@
-from numpy import full, array
+from numpy import full
 from math import floor
 from sudoku_solver import SudokuSolver
 from random import choice
