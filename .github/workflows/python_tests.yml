@@ -3,8 +3,8 @@ name: Python Tests
 on: [push, pull_request]
 
 jobs:
-  test:
-    name: Run Tests
+  lint-and-test:
+    name: Run Linter and Tests
     runs-on: ubuntu-latest
 
     steps:
@@ -19,11 +19,8 @@ jobs:
     - name: Install dependencies
       run: pip install -r requirements.txt  
 
-    - name: Run tests
-      run: python -m unittest discover -s tests
-
-    - name: Install Flake8
-      run: pip install flake8
-
     - name: Run linter
       uses: chartboost/ruff-action@v1
+  
+    - name: Run tests
+      run: python -m unittest discover -s tests
